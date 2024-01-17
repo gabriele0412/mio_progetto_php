@@ -16,7 +16,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1>Books</h1>
-    <a href="addbook.php">Add New Book</a>
+    <a href="addbook.php">Add New Books</a>
     <ul>
         <?php foreach ($books as $book): ?>
             <li>
