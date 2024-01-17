@@ -11,23 +11,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
     <title>Add Book</title>
 </head>
 <body>
+<div class="container">
     <h1>Add New Book</h1>
-    <form method="post">
-        Title: <input type="text" name="title"><br>
-        Price: <input type="text" name="price"><br>
-        Category: 
-        <select name="category">
-            <option value="Fiction">Fiction</option>
-            <option value="Non-Fiction">Non-Fiction</option>
-            <option value="Biography">Biography</option>
-            <option value="Science Fiction">Science Fiction</option>
-            <option value="Mystery">Mystery</option>
-        </select><br>
-        <input type="submit" value="Add Book">
+    <form method="post" class="mb-3">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" class="form-control" name="price">
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select name="category" class="form-control">
+                <!-- options here -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
+</div>
+
 </body>
 </html>
 

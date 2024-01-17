@@ -12,21 +12,24 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
     <title>Bookstore</title>
 </head>
 <body>
+    <!-- Style the book list in index.php with Bootstrap classes -->
+<div class="container">
     <h1>Books</h1>
-    <a href="addbook.php">Add New Books</a>
-    <ul>
+    <a href="addbook.php" class="btn btn-primary mb-3">Add New Books</a>
+    <ul class="list-group">
         <?php foreach ($books as $book): ?>
-            <li>
-                <?php echo htmlspecialchars($book['title'], ENT_QUOTES); ?>
-                - <?php echo htmlspecialchars($book['category'], ENT_QUOTES); ?>
-                - $<?php echo htmlspecialchars($book['price'], ENT_QUOTES); ?>
-                <a href="index.php?delete=<?php echo $book['id']; ?>">Delete</a>
+            <li class="list-group-item">
+                <!-- Book details here -->
+                <a href="index.php?delete=<?php echo $book['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
             </li>
         <?php endforeach; ?>
     </ul>
+</div>
 </body>
 </html>
 
